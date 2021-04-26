@@ -32,6 +32,7 @@ if __name__ == "__main__":
     movie_reviews_data_folder = r"./data"
     dataset = load_files(movie_reviews_data_folder, shuffle=False)
     print("n_samples: %d" % len(dataset.data))
+    print(dataset.data)
 
     # split the dataset in training and test set:
     docs_train, docs_test, y_train, y_test = train_test_split(
@@ -40,10 +41,16 @@ if __name__ == "__main__":
     # TASK: Build a vectorizer / classifier pipeline that filters out tokens
     # that are too rare or too frequent
 
+    text_clf = Pipeline([('tfidf_vect', TfidfVectorizer()),
+                         ('clf', LinearSVC())
+                         ])
     # TASK: Build a grid search to find out whether unigrams or bigrams are
     # more useful.
     # Fit the pipeline on the training set using grid search for the parameters
 
+    parameters = {'tfidf_vect__ngram_range':[(1,1), (2,2)],
+                  'tfidf_vect__use_idf': (True, False),
+                  'clf__C': (0.5, 1) }
     # TASK: print the cross-validated scores for the each parameters set
     # explored by the grid search
 
