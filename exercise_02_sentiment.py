@@ -51,12 +51,20 @@ if __name__ == "__main__":
     parameters = {'tfidf_vect__ngram_range':[(1,1), (2,2)],
                   'tfidf_vect__use_idf': (True, False),
                   'clf__C': (0.5, 1) }
+
+    gs_clf = GridSearchCV(text_clf, parameters, n_jobs= -1)
+
+    gs_clf = gs_clf.fit(docs_train, y_train)
+
+
     # TASK: print the cross-validated scores for the each parameters set
     # explored by the grid search
 
+    print(gs_clf.cv_results_)
     # TASK: Predict the outcome on the testing set and store it in a variable
     # named y_predicted
 
+    y_predicted = gs_clf.pre_dispatch(docs_test)
     # Print the classification report
     print(metrics.classification_report(y_test, y_predicted,
                                         target_names=dataset.target_names))
