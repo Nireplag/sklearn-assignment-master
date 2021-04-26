@@ -31,7 +31,7 @@ if __name__ == "__main__":
     # the training data folder must be passed as first argument
     movie_reviews_data_folder = r"./data"
     dataset = load_files(movie_reviews_data_folder, shuffle=False)
-    print("n_samples: %d" % len(dataset.data))
+    #print("n_samples: %d" % len(dataset.data))
     #print(dataset.data)
 
     # split the dataset in training and test set:
