@@ -32,7 +32,7 @@ if __name__ == "__main__":
     movie_reviews_data_folder = r"./data"
     dataset = load_files(movie_reviews_data_folder, shuffle=False)
     print("n_samples: %d" % len(dataset.data))
-    print(dataset.data)
+    #print(dataset.data)
 
     # split the dataset in training and test set:
     docs_train, docs_test, y_train, y_test = train_test_split(
@@ -64,7 +64,7 @@ if __name__ == "__main__":
     # TASK: Predict the outcome on the testing set and store it in a variable
     # named y_predicted
 
-    y_predicted = gs_clf.pre_dispatch(docs_test)
+    y_predicted = gs_clf.predict(docs_test)
     # Print the classification report
     print(metrics.classification_report(y_test, y_predicted,
                                         target_names=dataset.target_names))
