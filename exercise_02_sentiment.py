@@ -14,6 +14,7 @@ In this examples we will use a movie review dataset.
 import sys
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
+from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
 from sklearn.datasets import load_files
@@ -40,7 +41,7 @@ if __name__ == "__main__":
 
     # TASK: Build a vectorizer / classifier pipeline that filters out tokens
     # that are too rare or too frequent
-
+    print('--------------------------------------------------------------------------------- First classifier-----------------------------------------------------------------------')
     text_clf = Pipeline([('tfidf_vect', TfidfVectorizer()),
                          ('clf', LinearSVC())
                          ])
@@ -76,3 +77,36 @@ if __name__ == "__main__":
     # import matplotlib.pyplot as plt
     # plt.matshow(cm)
     # plt.show()
+    print("----------------------------------------------------------------------------- Second classifier --------------------------------------------------------------------------------------")
+
+    text_clf2 = Pipeline([('tfidf_vect', TfidfVectorizer()),
+                         ('clf', MultinomialNB())
+                         ])
+    # TASK: Build a grid search to find out whether unigrams or bigrams are
+    # more useful.
+    # Fit the pipeline on the training set using grid search for the parameters
+
+    parameters2 = {'tfidf_vect__ngram_range':[(1,1), (2,2)],
+                  'tfidf_vect__use_idf': (True, False),
+                  'clf2__alpha': (0.5, 1) }
+
+    gs_clf2 = GridSearchCV(text_clf2, parameters2, n_jobs= -1)
+
+    gs_clf2 = gs_clf2.fit(docs_train, y_train)
+
+
+    # TASK: print the cross-validated scores for the each parameters set
+    # explored by the grid search
+
+    print(gs_clf2.cv_results_)
+    # TASK: Predict the outcome on the testing set and store it in a variable
+    # named y_predicted
+
+    y_predicted2 = gs_clf2.predict(docs_test)
+    # Print the classification report
+    print(metrics.classification_report(y_test, y_predicted2,
+                                        target_names=dataset.target_names))
+
+    # Print and plot the confusion matrix
+    cm2 = metrics.confusion_matrix(y_test, y_predicted2)
+    print(cm2)
