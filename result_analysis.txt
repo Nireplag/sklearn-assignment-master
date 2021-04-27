@@ -1,0 +1,68 @@
+--------------------------------------------------------------------------------- First classifier-----------------------------------------------------------------------
+{'mean_fit_time': array([1.08664656, 1.09353194, 5.18853583, 4.51730676, 1.27572956,
+       1.22548814, 5.34710345, 4.91758232]), 'std_fit_time': array([0.06844582, 0.02332013, 0.1665444 , 0.67446918, 0.06536113,
+       0.0507866 , 0.43500761, 1.04661725]), 'mean_score_time': array([0.25269303, 0.23250008, 0.55262747, 0.44032183, 0.24598446,
+       0.28193812, 0.7039813 , 0.40918999]), 'std_score_time': array([0.02233845, 0.00666438, 0.03306292, 0.12133819, 0.02018199,
+       0.0562445 , 0.05341746, 0.15101361]), 'param_clf__C': masked_array(data=[0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1],
+             mask=[False, False, False, False, False, False, False, False],
+       fill_value='?',
+            dtype=object), 'param_tfidf_vect__ngram_range': masked_array(data=[(1, 1), (1, 1), (2, 2), (2, 2), (1, 1), (1, 1), (2, 2),
+                   (2, 2)],
+             mask=[False, False, False, False, False, False, False, False],
+       fill_value='?',
+            dtype=object), 'param_tfidf_vect__use_idf': masked_array(data=[True, False, True, False, True, False, True, False],
+             mask=[False, False, False, False, False, False, False, False],
+       fill_value='?',
+            dtype=object), 'params': [{'clf__C': 0.5, 'tfidf_vect__ngram_range': (1, 1), 'tfidf_vect__use_idf': True}, {'clf__C': 0.5, 'tfidf_vect__ngram_range': (1, 1), 'tfidf_vect__use_idf': False}, {'clf__C': 0.5, 'tfidf_vect__ngram_range': (2, 2), 'tfidf_vect__use_idf': True}, {'clf__C': 0.5, 'tfidf_vect__ngram_range': (2, 2), 'tfidf_vect__use_idf': False}, {'clf__C': 1, 'tfidf_vect__ngram_range': (1, 1), 'tfidf_vect__use_idf': True}, {'clf__C': 1, 'tfidf_vect__ngram_range': (1, 1), 'tfidf_vect__use_idf': False}, {'clf__C': 1, 'tfidf_vect__ngram_range': (2, 2), 'tfidf_vect__use_idf': True}, {'clf__C': 1, 'tfidf_vect__ngram_range': (2, 2), 'tfidf_vect__use_idf': False}], 'split0_test_score': array([0.87333333, 0.85333333, 0.81333333, 0.77666667, 0.85666667,
+       0.88666667, 0.81666667, 0.78666667]), 'split1_test_score': array([0.86      , 0.82      , 0.84666667, 0.8       , 0.86      ,
+       0.83      , 0.85      , 0.80666667]), 'split2_test_score': array([0.78666667, 0.75333333, 0.78      , 0.75333333, 0.79      ,
+       0.77333333, 0.79      , 0.76666667]), 'split3_test_score': array([0.84333333, 0.80333333, 0.84      , 0.81666667, 0.85      ,
+       0.84333333, 0.84333333, 0.83333333]), 'split4_test_score': array([0.82666667, 0.77666667, 0.82666667, 0.79333333, 0.81666667,
+       0.80666667, 0.83      , 0.8       ]), 'mean_test_score': array([0.838     , 0.80133333, 0.82133333, 0.788     , 0.83466667,
+       0.828     , 0.826     , 0.79866667]), 'std_test_score': array([0.03008137, 0.03455109, 0.02362673, 0.02156128, 0.02712932,
+       0.0377477 , 0.02133333, 0.02207059]), 'rank_test_score': array([1, 6, 5, 8, 2, 3, 4, 7], dtype=int32)}
+              precision    recall  f1-score   support
+
+         neg       0.87      0.82      0.84       255
+         pos       0.82      0.87      0.84       245
+
+    accuracy                           0.84       500
+   macro avg       0.84      0.84      0.84       500
+weighted avg       0.84      0.84      0.84       500
+
+[[208  47]
+ [ 32 213]]
+----------------------------------------------------------------------------- Second classifier --------------------------------------------------------------------------------------
+{'mean_fit_time': array([1.67862892, 1.78020506, 5.90563731, 5.2317832 , 1.94114151,
+       1.96253958, 5.7345582 , 4.25811296]), 'std_fit_time': array([0.02140398, 0.05780685, 0.08412162, 0.19191106, 0.18829045,
+       0.08408674, 0.12494014, 1.38943249]), 'mean_score_time': array([0.42254848, 0.42247467, 0.59368005, 0.68165035, 0.45093198,
+       0.41339459, 0.63125505, 0.39776392]), 'std_score_time': array([0.01628711, 0.01437432, 0.02754996, 0.07895461, 0.04990545,
+       0.05946646, 0.04777253, 0.13658885]), 'param_clf2__alpha': masked_array(data=[0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1],
+             mask=[False, False, False, False, False, False, False, False],
+       fill_value='?',
+            dtype=object), 'param_tfidf_vect__ngram_range': masked_array(data=[(1, 1), (1, 1), (2, 2), (2, 2), (1, 1), (1, 1), (2, 2),
+                   (2, 2)],
+             mask=[False, False, False, False, False, False, False, False],
+       fill_value='?',
+            dtype=object), 'param_tfidf_vect__use_idf': masked_array(data=[True, False, True, False, True, False, True, False],
+             mask=[False, False, False, False, False, False, False, False],
+       fill_value='?',
+            dtype=object), 'params': [{'clf2__alpha': 0.5, 'tfidf_vect__ngram_range': (1, 1), 'tfidf_vect__use_idf': True}, {'clf2__alpha': 0.5, 'tfidf_vect__ngram_range': (1, 1), 'tfidf_vect__use_idf': False}, {'clf2__alpha': 0.5, 'tfidf_vect__ngram_range': (2, 2), 'tfidf_vect__use_idf': True}, {'clf2__alpha': 0.5, 'tfidf_vect__ngram_range': (2, 2), 'tfidf_vect__use_idf': False}, {'clf2__alpha': 1, 'tfidf_vect__ngram_range': (1, 1), 'tfidf_vect__use_idf': True}, {'clf2__alpha': 1, 'tfidf_vect__ngram_range': (1, 1), 'tfidf_vect__use_idf': False}, {'clf2__alpha': 1, 'tfidf_vect__ngram_range': (2, 2), 'tfidf_vect__use_idf': True}, {'clf2__alpha': 1, 'tfidf_vect__ngram_range': (2, 2), 'tfidf_vect__use_idf': False}], 'split0_test_score': array([0.80333333, 0.81333333, 0.80333333, 0.79333333, 0.81      ,
+       0.77333333, 0.79      , 0.79      ]), 'split1_test_score': array([0.84      , 0.81      , 0.81333333, 0.83      , 0.84      ,
+       0.79333333, 0.81      , 0.81333333]), 'split2_test_score': array([0.79      , 0.76      , 0.81333333, 0.78666667, 0.79333333,
+       0.75      , 0.8       , 0.77      ]), 'split3_test_score': array([0.79666667, 0.8       , 0.83333333, 0.83333333, 0.80333333,
+       0.76      , 0.83333333, 0.82666667]), 'split4_test_score': array([0.83      , 0.77      , 0.83333333, 0.80666667, 0.81666667,
+       0.75333333, 0.81333333, 0.79333333]), 'mean_test_score': array([0.812     , 0.79066667, 0.81933333, 0.81      , 0.81266667,
+       0.766     , 0.80933333, 0.79866667]), 'std_test_score': array([0.01950499, 0.02164358, 0.012     , 0.01885618, 0.01569147,
+       0.01583246, 0.01451436, 0.01961859]), 'rank_test_score': array([3, 7, 1, 4, 2, 8, 5, 6], dtype=int32)}
+              precision    recall  f1-score   support
+
+         neg       0.88      0.76      0.82       255
+         pos       0.78      0.89      0.84       245
+
+    accuracy                           0.83       500
+   macro avg       0.83      0.83      0.83       500
+weighted avg       0.83      0.83      0.83       500
+
+[[195  60]
+ [ 26 219]]

@@ -80,7 +80,7 @@ if __name__ == "__main__":
     print("----------------------------------------------------------------------------- Second classifier --------------------------------------------------------------------------------------")
 
     text_clf2 = Pipeline([('tfidf_vect', TfidfVectorizer()),
-                         ('clf', MultinomialNB())
+                         ('clf2', MultinomialNB())
                          ])
     # TASK: Build a grid search to find out whether unigrams or bigrams are
     # more useful.
